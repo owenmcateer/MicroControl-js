@@ -1,0 +1,31 @@
+{
+  "name": "microcontrol-js",
+  "version": "1.0.0",
+  "description": "The JavaScript game & animation framework for MicroController.",
+  "author": "Owen McAteer",
+  "homepage": "https://github.com/owenmcateer/MicroControl-js",
+  "bugs": "https://github.com/owenmcateer/MicroControl-js/issues",
+  "license": "MIT",
+  "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:owenmcateer/MicroControl-js.git"
+  },
+  "keywords": [
+    "javascript",
+    "microcontroller",
+    "framework",
+    "2d",
+    "espruino"
+  ],
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "grunt": "~0.4.2",
+    "grunt-babel": "^6.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "nodeunit": "^0.9.1"
+  }
+}
