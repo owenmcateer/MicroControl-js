@@ -6,8 +6,7 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['src/Intro.js', 'src/core/test.js', 'src/Outro.js'],
-        //src: ['src/Intro.js', 'src/core/*.js', 'src/Outro.js'],
+        src: ['src/Intro.js', 'src/core/*.js', 'src/Outro.js'],
         dest: 'dist/microcontrol.js'
       }
     },
