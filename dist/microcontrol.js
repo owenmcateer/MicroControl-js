@@ -64,16 +64,6 @@ Micro.game = {
   height: 0,
 
   /**
-   * Bits Per Pixel {int} bpp - Number or bits per pixel.
-   */
-  bpp: 24,
-
-  /**
-   * Output function {boolean} output - Passed output function.
-   */
-  output: function(){},
-
-  /**
    * Is booted {boolean} isBooted - Has the game booted up yet?
    */
   isBooted: false,
@@ -89,22 +79,45 @@ Micro.game = {
   display_on: true,
 
   /**
-   * Debug {boolean} debug - Enable debugging?
+   * All game settings.
    */
-  debug: false,
+  settings: {
+    /**
+     * Bits Per Pixel {int} bpp - Number or bits per pixel.
+     */
+    bpp: 24,
 
+    /**
+     * Output function {boolean} output - Passed output function.
+     */
+    output: function(){},
+
+    /**
+     * Debug {boolean} debug - Enable debugging?
+     */
+    debug: false,
+  },
 
   /**
    * Display on {boolean} isRunning - Output to display or not?
    */
-  setup : function(width, height, bpp, output, debug) {
+  setup : function(width, height, settings) {
 
     // Set those settings.
     this.width = width;
     this.height = height;
-    this.bpp = bpp;
-    this.output = output;
-    this.debug = debug;
+
+    for (var p in settings) {
+      try {
+        this.settings[p] = settings[p];
+
+      } catch(e) {
+        // Property in destination object not set; create it and set its value.
+        this.settings[p] = settings[p];
+      }
+    }
+
+    console.log(this.settings);
 
     // Start the game already.
     if (this.isBooted) {
@@ -113,6 +126,8 @@ Micro.game = {
     Micro.debug.log('booting');
     this.isBooted = true;
     this.isRunning = true;
+    console.log(this.settings);
+
   },
 
 };

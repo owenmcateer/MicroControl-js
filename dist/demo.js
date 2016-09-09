@@ -1,15 +1,19 @@
 
-/*
-Micro.test.test1('go');
-Micro.test.test2('go');
-Micro.test.test3('go');
-*/
-
-function output() {
-  console.log('OUTPUT');
+/* Example matrix output */
+var matrix = {
+  leds: new ArrayBuffer(15 * 15),
+  flip: function() {
+    console.log('Outputting data');
+    console.log(this.leds);
+  }
 }
 
-Micro.game.setup(15, 15, 24, output(), true);
+var settings = {
+  bpp: 24, // Full RGB 255.
+  output: matrix,
+  debug: true
+};
+Micro.game.setup(15, 15, settings);
 
 var state_play = {
   doSomething: function() {
